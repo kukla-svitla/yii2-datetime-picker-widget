@@ -8,6 +8,11 @@ This yii2 extension is a wrapper for the powerful [jQuery date-time picker](http
 [![Latest Unstable Version](https://poser.pugx.org/metalguardian/yii2-datetime-picker-widget/v/unstable.svg)](https://packagist.org/packages/metalguardian/yii2-datetime-picker-widget)
 [![License](https://poser.pugx.org/metalguardian/yii2-datetime-picker-widget/license.svg)](https://packagist.org/packages/metalguardian/yii2-datetime-picker-widget)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/MetalGuardian/yii2-datetime-picker-widget/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/MetalGuardian/yii2-datetime-picker-widget/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/MetalGuardian/yii2-datetime-picker-widget/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/MetalGuardian/yii2-datetime-picker-widget/?branch=master)
+[![Build Status](https://travis-ci.org/MetalGuardian/yii2-datetime-picker-widget.svg?branch=master)](https://travis-ci.org/MetalGuardian/yii2-datetime-picker-widget)
+[![Code Climate](https://codeclimate.com/github/MetalGuardian/yii2-datetime-picker-widget/badges/gpa.svg)](https://codeclimate.com/github/MetalGuardian/yii2-datetime-picker-widget)
+
 Installation
 ------------
 
