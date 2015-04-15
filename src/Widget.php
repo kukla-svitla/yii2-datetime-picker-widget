@@ -3,8 +3,7 @@
 namespace metalguardian\dateTimePicker;
 
 use Yii;
-use yii\base\InvalidParamException;
-use yii\helpers\FormatConverter;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
@@ -15,7 +14,9 @@ use yii\widgets\InputWidget;
  */
 class Widget extends InputWidget
 {
+    /** date picker mode */
     const MODE_DATE = 1;
+    /** time picker mode */
     const MODE_TIME = 2;
 
     /**
@@ -35,14 +36,6 @@ class Widget extends InputWidget
      * for possible options.
      */
     public $clientOptions = [];
-
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-    }
 
     protected $languages = [
         'ar',
@@ -99,6 +92,27 @@ class Widget extends InputWidget
     ];
 
     protected $fallbackLanguage = 'en';
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        parent::init();
+
+        // set defaults
+        $this->clientOptions = ArrayHelper::merge(
+            [
+                'scrollMonth' => false,
+                'scrollInput' => false,
+                'dayOfWeekStart' => 1,
+                'format' => 'Y-m-d H:i:s',
+                'formatDate' => 'Y-m-d',
+                'formatTime' => 'H:i:s',
+            ],
+            $this->clientOptions
+        );
+    }
 
     /**
      * Renders the widget.
