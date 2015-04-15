@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\web\View;
 use yii\widgets\InputWidget;
 
 /**
@@ -91,7 +92,7 @@ class Widget extends InputWidget
         'zh-TW',
     ];
 
-    protected $fallbackLanguage = 'en';
+    protected $defaultLanguage = 'en';
 
     /**
      * @inheritdoc
@@ -109,25 +110,15 @@ class Widget extends InputWidget
                 'format' => 'Y-m-d H:i:s',
                 'formatDate' => 'Y-m-d',
                 'formatTime' => 'H:i:s',
+                'lang' => $this->defaultLanguage,
             ],
             $this->clientOptions
         );
-    }
 
-    /**
-     * Renders the widget.
-     */
-    public function run()
-    {
-        echo $this->renderWidget() . "\n";
-
-        $containerID = $this->options['id'];
-
-        $language = $this->language ? $this->language : Yii::$app->language;
-        if ($this->isAcceptedLanguage($language)) {
-            $this->clientOptions['lang'] = $language;
-        } else {
-            $this->clientOptions['lang'] = $this->fallbackLanguage;
+        if ($this->language && $this->isAcceptedLanguage($this->language)) {
+            $this->clientOptions['lang'] = $this->language;
+        } elseif ($this->isAcceptedLanguage(Yii::$app->language)) {
+            $this->clientOptions['lang'] = Yii::$app->language;
         }
 
         $timePicker = true;
@@ -139,36 +130,22 @@ class Widget extends InputWidget
         }
         $this->clientOptions['timepicker'] = $timePicker;
         $this->clientOptions['datepicker'] = $datePicker;
-
-        $view = $this->getView();
-        Asset::register($view);
-
-        $options = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
-        $js = "jQuery('#{$containerID}').datetimepicker({$options});";
-        $view->registerJs($js);
     }
 
     /**
-     * Renders the DateTimePicker widget.
-     * @return string the rendering result.
+     * Renders the widget.
      */
-    protected function renderWidget()
+    public function run()
     {
-        // get formatted date value
         if ($this->hasModel()) {
-            $value = Html::getAttributeValue($this->model, $this->attribute);
+            $input = Html::activeTextInput($this->model, $this->attribute, $this->options);
         } else {
-            $value = $this->value;
-        }
-        $options = $this->options;
-
-        if ($this->hasModel()) {
-            $input = Html::activeTextInput($this->model, $this->attribute, $options);
-        } else {
-            $input = Html::textInput($this->name, $value, $options);
+            $input = Html::textInput($this->name, $this->value, $this->options);
         }
 
-        return $input;
+        echo $input;
+
+        $this->registerJs();
     }
 
     /**
@@ -178,5 +155,17 @@ class Widget extends InputWidget
     protected function isAcceptedLanguage($language)
     {
         return in_array($language, $this->languages, true);
+    }
+
+    public function registerJs($position = View::POS_READY, $key = null)
+    {
+        $id = $this->options['id'];
+
+        $view = $this->getView();
+        Asset::register($view);
+
+        $options = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
+        $js = "jQuery('#{$id}').datetimepicker({$options});";
+        $view->registerJs($js, $position, $key);
     }
 }

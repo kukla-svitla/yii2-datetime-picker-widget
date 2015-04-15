@@ -12,7 +12,7 @@
     </filter>
     <testsuites>
         <testsuite name="Yii2 DateTimePicker Test Suite">
-            <directory>./tests/functional</directory>
+            <directory>./tests/functional/picker</directory>
         </testsuite>
     </testsuites>
     <logging>
