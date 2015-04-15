@@ -3,6 +3,11 @@ Yii2 date and time picker
 
 This yii2 extension is a wrapper for the powerful [jQuery date-time picker](https://github.com/xdan/datetimepicker)
 
+[![Latest Stable Version](https://poser.pugx.org/metalguardian/yii2-datetime-picker-widget/v/stable.svg)](https://packagist.org/packages/metalguardian/yii2-datetime-picker-widget)
+[![Total Downloads](https://poser.pugx.org/metalguardian/yii2-datetime-picker-widget/downloads.svg)](https://packagist.org/packages/metalguardian/yii2-datetime-picker-widget)
+[![Latest Unstable Version](https://poser.pugx.org/metalguardian/yii2-datetime-picker-widget/v/unstable.svg)](https://packagist.org/packages/metalguardian/yii2-datetime-picker-widget)
+[![License](https://poser.pugx.org/metalguardian/yii2-datetime-picker-widget/license.svg)](https://packagist.org/packages/metalguardian/yii2-datetime-picker-widget)
+
 Installation
 ------------
 
