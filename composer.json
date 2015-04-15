@@ -18,5 +18,10 @@
         "psr-4": {
             "metalguardian\\dateTimePicker\\": "src"
         }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "bower-asset-library": "vendor/bower"
+        }
     }
 }
