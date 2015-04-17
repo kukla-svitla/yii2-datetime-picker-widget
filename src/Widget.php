@@ -38,6 +38,9 @@ class Widget extends InputWidget
      */
     public $clientOptions = [];
 
+    /**
+     * @var array the languages supported by widget
+     */
     protected $languages = [
         'ar',
         'az',
@@ -92,7 +95,18 @@ class Widget extends InputWidget
         'zh-TW',
     ];
 
-    protected $defaultLanguage = 'en';
+    /**
+     * @var array the array of the default widget params
+     */
+    protected $defaults = [
+        'scrollMonth' => false,
+        'scrollInput' => false,
+        'dayOfWeekStart' => 1,
+        'format' => 'Y-m-d H:i:00',
+        'formatDate' => 'Y-m-d',
+        'formatTime' => 'H:i:00',
+        'lang' => 'en',
+    ];
 
     /**
      * @inheritdoc
@@ -101,17 +115,17 @@ class Widget extends InputWidget
     {
         parent::init();
 
+        if ($this->mode === static::MODE_DATE) {
+            $this->defaults['timepicker'] = false;
+            $this->defaults['format'] = $this->defaults['formatDate'];
+        } elseif ($this->mode === static::MODE_TIME) {
+            $this->defaults['datepicker'] = false;
+            $this->defaults['format'] = $this->defaults['formatTime'];
+        }
+
         // set defaults
         $this->clientOptions = ArrayHelper::merge(
-            [
-                'scrollMonth' => false,
-                'scrollInput' => false,
-                'dayOfWeekStart' => 1,
-                'format' => 'Y-m-d H:i:s',
-                'formatDate' => 'Y-m-d',
-                'formatTime' => 'H:i:s',
-                'lang' => $this->defaultLanguage,
-            ],
+            $this->defaults,
             $this->clientOptions
         );
 
@@ -120,16 +134,6 @@ class Widget extends InputWidget
         } elseif ($this->isAcceptedLanguage(Yii::$app->language)) {
             $this->clientOptions['lang'] = Yii::$app->language;
         }
-
-        $timePicker = true;
-        $datePicker = true;
-        if ($this->mode === static::MODE_DATE) {
-            $timePicker = false;
-        } elseif ($this->mode === static::MODE_TIME) {
-            $datePicker = false;
-        }
-        $this->clientOptions['timepicker'] = $timePicker;
-        $this->clientOptions['datepicker'] = $datePicker;
     }
 
     /**

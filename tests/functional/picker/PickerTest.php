@@ -96,7 +96,7 @@ class PickerTest extends TestCase
         $widget->registerJs(View::POS_READY, 'datetime-widget');
 
         $test = <<<JS
-jQuery('#post-posted').datetimepicker({"scrollMonth":false,"scrollInput":false,"dayOfWeekStart":1,"format":"Y-m-d H:i:s","formatDate":"Y-m-d","formatTime":"H:i:s","lang":"ru","timepicker":false,"datepicker":true});
+jQuery('#post-posted').datetimepicker({"scrollMonth":false,"scrollInput":false,"dayOfWeekStart":1,"format":"Y-m-d","formatDate":"Y-m-d","formatTime":"H:i:00","lang":"ru","timepicker":false});
 JS;
         $this->assertEquals($test, $view->js[View::POS_READY]['datetime-widget']);
     }
