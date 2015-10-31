@@ -19,6 +19,6 @@ class AssetTest extends TestCase
         $content = $view->renderFile('@yiiunit/views/rawlayout.php');
         $this->assertContains('jquery.datetimepicker.css', $content);
         $this->assertContains('jquery.js', $content);
-        $this->assertContains('jquery.datetimepicker.js', $content);
+        $this->assertContains('jquery.datetimepicker.full.js', $content);
     }
 }

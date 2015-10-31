@@ -1,27 +1,65 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "d9606a90dcb0f2a97ffe0f35b07a53df",
+    "content-hash": "7ed5a950e52a75950f8b30711de0bbdb",
     "packages": [
+        {
+            "name": "bower-asset/date-functions",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malko/date-functions.git",
+                "reference": "e0d0bdedbb866c10b9cf01489466e70ae696f1b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malko/date-functions/zipball/e0d0bdedbb866c10b9cf01489466e70ae696f1b3",
+                "reference": "e0d0bdedbb866c10b9cf01489466e70ae696f1b3",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "date-functions.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Baron Schwartz date-function.js reworked",
+            "keywords": [
+                "calendar",
+                "date",
+                "utils"
+            ]
+        },
         {
             "name": "bower-asset/datetimepicker",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xdan/datetimepicker.git",
-                "reference": "d977ea5d4d16f942de1886d9c2caa784eb0aa804"
+                "reference": "7e35e325363eafe9764228acc6a3d0be473b3aae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xdan/datetimepicker/zipball/d977ea5d4d16f942de1886d9c2caa784eb0aa804",
-                "reference": "d977ea5d4d16f942de1886d9c2caa784eb0aa804",
+                "url": "https://api.github.com/repos/xdan/datetimepicker/zipball/7e35e325363eafe9764228acc6a3d0be473b3aae",
+                "reference": "7e35e325363eafe9764228acc6a3d0be473b3aae",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/jquery": ">=1.7.2"
+                "bower-asset/date-functions": "~0.0.1",
+                "bower-asset/jquery": ">=1.7.2",
+                "bower-asset/jquery-mousewheel": ">=3.1.13"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -37,12 +75,17 @@
                     "**/*.md",
                     "**/*.html",
                     "**/*.tpl",
-                    "**/jquery.js"
+                    "**/jquery.js",
+                    "bower_components",
+                    "node_modules"
                 ],
                 "branch-alias": {
-                    "dev-master": "2.4.1-dev"
+                    "dev-master": "2.4.5-dev"
                 }
             },
+            "license": [
+                "MIT"
+            ],
             "keywords": [
                 "calendar",
                 "date",
@@ -61,7 +104,7 @@
                 "ui",
                 "validation"
             ],
-            "time": "2015-04-09 15:18:58"
+            "time": "2015-10-22 06:13:02"
         },
         {
             "name": "bower-asset/jquery",
@@ -106,6 +149,37 @@
                 "jquery",
                 "library"
             ]
+        },
+        {
+            "name": "bower-asset/jquery-mousewheel",
+            "version": "3.1.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-mousewheel.git",
+                "reference": "67289b6b2aa0066d7d78a5807f520387135ffb22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-mousewheel/zipball/67289b6b2aa0066d7d78a5807f520387135ffb22",
+                "reference": "67289b6b2aa0066d7d78a5807f520387135ffb22",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.2.2"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./jquery.mousewheel.js",
+                "bower-asset-ignore": [
+                    "*.json",
+                    "*.markdown",
+                    "*.txt",
+                    ".*",
+                    "!LICENSE.txt",
+                    "Gruntfile.js",
+                    "test"
+                ]
+            }
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -326,16 +400,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.4",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "726867caee3f23aa7a6975c801e64b6021e14f86"
+                "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/726867caee3f23aa7a6975c801e64b6021e14f86",
-                "reference": "726867caee3f23aa7a6975c801e64b6021e14f86",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/f42b2eb80f61992438661b01d0d74c6738e2ff38",
+                "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38",
                 "shasum": ""
             },
             "require": {
@@ -410,7 +484,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-05-10 20:09:47"
+            "time": "2015-08-05 22:00:30"
         },
         {
             "name": "yiisoft/yii2-composer",

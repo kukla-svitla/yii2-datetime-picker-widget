@@ -33,7 +33,7 @@ class Asset extends AssetBundle
      * @inheritdoc
      */
     public $js = [
-        'jquery.datetimepicker.js',
+        'build/jquery.datetimepicker.full.js',
     ];
 
     /**
