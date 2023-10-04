@@ -20,7 +20,7 @@ class Asset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@vendor/bower/datetimepicker';
+    public $sourcePath = '@vendor/bower-asset/datetimepicker';
 
     /**
      * @inheritdoc
