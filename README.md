@@ -21,13 +21,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist metalguardian/yii2-datetime-picker-widget "*"
+php composer.phar require --prefer-dist kukla-svitla/yii2-datetime-picker-widget "*"
 ```
 
 or add
 
 ```
-"metalguardian/yii2-datetime-picker-widget": "*"
+"kukla-svitla/yii2-datetime-picker-widget": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -42,7 +42,7 @@ You can use is like a separate widget or with `ActiveField` instance.
 
 ```php
 
-<?= \metalguardian\dateTimePicker\Widget::widget([
+<?= \svitla\dateTimePicker\Widget::widget([
 
     // you need specify model and attribute
 
@@ -54,9 +54,9 @@ You can use is like a separate widget or with `ActiveField` instance.
     //'value' => '2016/01/22 18:26',
     //'name' => 'specific-name',
 
-    'mode' => \metalguardian\dateTimePicker\Widget::MODE_DATE,
+    'mode' => \svitla\dateTimePicker\Widget::MODE_DATE,
     // for only date picker
-    // or \metalguardian\dateTimePicker\Widget::MODE_TIME for time picker
+    // or \svitla\dateTimePicker\Widget::MODE_TIME for time picker
     // default is datetime picker
 
     'language' => 'ru',
@@ -70,9 +70,9 @@ You can use is like a separate widget or with `ActiveField` instance.
     ]
 ]) ?>
 
-<?= $form->field($model, 'start_time')->widget(\metalguardian\dateTimePicker\Widget::className(), [
+<?= $form->field($model, 'start_time')->widget(\svitla\dateTimePicker\Widget::className(), [
     'language' => 'ru',
-    'mode' => \metalguardian\dateTimePicker\Widget::MODE_TIME,
+    'mode' => \svitla\dateTimePicker\Widget::MODE_TIME,
     'options' => [
         'class' => 'my-class',
     ],
