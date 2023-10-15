@@ -4,6 +4,7 @@
     "type": "yii2-extension",
     "keywords": ["yii2","extension","picker","date","time"],
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Olexandr Kukla",
