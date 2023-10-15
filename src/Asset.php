@@ -1,26 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: metal
- * Date: 14.04.15
- * Time: 16:42
- */
 
-namespace metalguardian\dateTimePicker;
-
+namespace svitla\dateTimePicker;
 
 use yii\web\AssetBundle;
 
 /**
  * Class Asset
- * @package metalguardian\dateTimePicker
+ * @package svitla\dateTimePicker
  */
 class Asset extends AssetBundle
 {
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@vendor/bower-asset/datetimepicker';
+    public $sourcePath = '@bower/datetimepicker';
 
     /**
      * @inheritdoc

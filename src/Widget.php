@@ -1,6 +1,6 @@
 <?php
 
-namespace metalguardian\dateTimePicker;
+namespace svitla\dateTimePicker;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -11,7 +11,7 @@ use yii\widgets\InputWidget;
 
 /**
  * Class Widget
- * @package metalguardian\dateTimePicker
+ * @package svitla\dateTimePicker
  */
 class Widget extends InputWidget
 {
