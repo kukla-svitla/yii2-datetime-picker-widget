@@ -1,13 +1,13 @@
 {
-    "name": "metalguardian/yii2-datetime-picker-widget",
+    "name": "kukla-svitla/yii2-datetime-picker-widget",
     "description": "Date and time picker",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","picker","date","time"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Ivan Pushkin",
-            "email": "imetalguardi+yii2@gmail.com"
+            "name": "Olexandr Kukla",
+            "email": "o.kukla@svitla.com"
         }
     ],
     "require": {
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "metalguardian\\dateTimePicker\\": "src"
+            "svitla\\dateTimePicker\\": "src"
         }
     },
     "extra": {
         "asset-installer-paths": {
-            "bower-asset-library": "vendor/bower"
+            "bower-asset-library": "vendor/bower-asset"
         }
     }
 }
